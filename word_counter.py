@@ -18,12 +18,29 @@ def print_counts(label: str, counts: dict) -> None:
     print(f"  Characters : {counts['characters']:,}")
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python word_counter.py <file1> [file2 ...]")
-        sys.exit(1)
+HELP = """Usage: python word_counter.py <file1> [file2 ...]
 
-    files = sys.argv[1:]
+Count lines, words, and characters in one or more text files.
+
+Arguments:
+  file1 [file2 ...]   One or more file paths to count.
+
+Options:
+  --help              Show this message and exit.
+
+Examples:
+  python word_counter.py notes.txt
+  python word_counter.py chapter1.txt chapter2.txt chapter3.txt"""
+
+
+def main():
+    args = sys.argv[1:]
+
+    if not args or "--help" in args:
+        print(HELP)
+        sys.exit(0 if "--help" in args else 1)
+
+    files = [a for a in args if a != "--help"]
     totals = {"lines": 0, "words": 0, "characters": 0}
 
     for path in files:
