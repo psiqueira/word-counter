@@ -11,6 +11,7 @@ def count_file(path: str) -> dict:
 
 
 def print_counts(label: str, counts: dict) -> None:
+    print(f"\nHello Paul, welcome to word counting!")
     print(f"\n{label}")
     print(f"  Lines      : {counts['lines']:,}")
     print(f"  Words      : {counts['words']:,}")
