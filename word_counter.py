@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 from pathlib import Path
 
@@ -18,7 +19,7 @@ def print_counts(label: str, counts: dict) -> None:
     print(f"  Characters : {counts['characters']:,}")
 
 
-HELP = """Usage: python word_counter.py <file1> [file2 ...]
+HELP = """Usage: word_counter.py <file1> [file2 ...]
 
 Count lines, words, and characters in one or more text files.
 
@@ -29,8 +30,8 @@ Options:
   --help              Show this message and exit.
 
 Examples:
-  python word_counter.py notes.txt
-  python word_counter.py chapter1.txt chapter2.txt chapter3.txt"""
+  ./word_counter.py notes.txt
+  ./word_counter.py chapter1.txt chapter2.txt chapter3.txt"""
 
 
 def main():
